@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(2,2,13,1) 29%, rgba(0,212,255,1) 100%);
+}
+.header{
+  background-color:black;
+  min-height: 100px;
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(2,2,13,1) 31%, rgba(2,29,44,1) 54%, rgba(0,212,255,1) 100%);
+position: sticky;
+top:0;
+z-index: 1;
+}
+
+nav {
+  @apply absolute bg-stone-900 shadow shadow-cyan-50 w-full left-0 right-0 p-5 z-50 transition-all duration-200 lg:relative lg:bg-transparent lg:shadow-none lg:p-0 lg:z-auto lg:w-auto;
+  top: -100vh;
+}
+
+nav.open {
+  top: 6rem;
+}
+
+@media (min-width: 1024px) {
+  nav {
+    top: 0;
+  }
+
+  nav.open {
+    top: 0;
+  }
+}
+
+nav ul {
+  @apply lg:flex lg:items-center lg:justify-center lg:gap-3;
+}
+
+nav ul li {
+  @apply mb-3 lg:mb-0;
+}
+
+.btn {
+  @apply py-2 px-8 border-white border-2 bg-transparent text-white hover:opacity-75 transition-all duration-200;
+}
+
+.heading {
+  @apply text-white font-bold text-4xl md:text-5xl xl:text-6xl;
+}
+
+p {
+  @apply text-sm;
+  line-height: 1.8;
+}
+
+.showcase {
+  background: url("./Assets/hls-resized-2.webp") no-repeat center/cover;
+}
+
+.showcase .overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 8rem 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .showcase,
+  .showcase .overlay {
+    height: 100vh;
+  }
+}
+
+.max-width {
+  @apply max-w-6xl mx-auto;
+}
+
+.articles {
+  @apply bg-white p-5 rounded-lg shadow  text-black text-sm;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.spinner article {
+  width: 5rem;
+  height: 5rem;
+  background-color: transparent;
+  border: 2px solid #98e2cb21;
+  border-top-color: #10b581;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+
